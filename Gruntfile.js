@@ -4,18 +4,20 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    //Minify files with uglify
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+    //Minify CSS files
+    cssmin: {
+      combine: {
+        files: {
+          'dev/css/main.css': ['dev/css/*.css']
+        }
       },
-      build: {
-        src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
+      minify: {
+        src: 'dev/css/main.css',
+        dest: 'dep/main.css'
       }
     },
 
-    //Concatenate js with r.js RequireJS Optimizer
+    //Concatenate and minify js with r.js RequireJS Optimizer
     requirejs: {
       compile: {
         options: {
@@ -53,7 +55,6 @@ module.exports = function(grunt) {
       main: {
         files: [
           {expand: true, cwd: 'dev/img/', src: ['**'], dest: 'dep/img/'},
-          {expand: true, cwd: 'dev/css/', src: ['**'], dest: 'dep/css/'},
           {expand: true, cwd: 'dev/fonts/', src: ['**'], dest: 'dep/fonts/'},
           {src: 'dev/optimized.js', dest:'dep/optimized.js'},
           {src: 'dev/index.html', dest:'dep/index.html'},
@@ -69,12 +70,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 
   // Default task(s).
   grunt.registerTask('default', ['requirejs', 'sass']);
-  grunt.registerTask('css', ['sass']);
+  grunt.registerTask('css', ['sass', 'cssmin']);
   grunt.registerTask('js', ['requirejs']);
   grunt.registerTask('cp', ['copy']);
+
+  grunt.registerTask('deploy', ['css', 'requirejs', 'copy']);
 
 };
