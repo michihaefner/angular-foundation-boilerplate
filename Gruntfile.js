@@ -19,16 +19,18 @@ module.exports = function(grunt) {
     requirejs: {
       compile: {
         options: {
-          baseUrl: "./",
-          mainConfigFile: "requirejs.conf.js",
-          optimize: "uglify2",
+          baseUrl: "dev/",
+          mainConfigFile: "dev/requirejs.conf.js",
+          //optimize: "uglify2",
 
-          name: "app/js/angular-app/app",
-          out: "app/js/optimized.js",
+          name: "app",
+          out: "dev/optimized.js"
+          /*,
           wrap: {
             start: '(function(){\'use strict\';',
             end: '}).call(this);'
           }
+          */
         }
       }
     },
@@ -40,8 +42,8 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {                         // Dictionary of files
-          'app/css/foundation.css': 'app/scss/foundation.scss',       // 'destination': 'source'
-          'app/css/normalize.css': 'app/scss/normalize.scss'
+          'dev/css/foundation.css': 'dev/scss/foundation.scss',       // 'destination': 'source'
+          'dev/css/normalize.css': 'dev/scss/normalize.scss'
         }
       }
     }
@@ -57,5 +59,6 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('default', ['requirejs', 'sass']);
   grunt.registerTask('css', ['sass']);
+  grunt.registerTask('js', ['requirejs']);
 
 };

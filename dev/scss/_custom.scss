@@ -1,0 +1,34 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Behold, here are all the Foundation components.
+@import
+	"foundation/settings",
+	"foundation/functions";
+
+
+
+.circular {
+	border-radius: calc(50%);
+}
+
+.vertical-alignment {
+	display: table;
+	width: 100%;
+
+	.vertical-middle {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.vertical-top {
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	.vertical-bottom {
+		display: table-cell;
+		vertical-align: bottom;
+	}
+}
+
