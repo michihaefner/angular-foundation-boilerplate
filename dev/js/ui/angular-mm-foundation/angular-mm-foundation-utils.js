@@ -1,0 +1,40 @@
+define(
+  [
+    "js/ui/angular-mm-foundation/accordion/accordion",
+    "js/ui/angular-mm-foundation/alert/alert",
+    "js/ui/angular-mm-foundation/bindHtml/bindHtml",
+    "js/ui/angular-mm-foundation/buttons/buttons",
+    "js/ui/angular-mm-foundation/dropdownToggle/dropdownToggle",
+    "js/ui/angular-mm-foundation/modal/modal",
+    "js/ui/angular-mm-foundation/pagination/pagination",
+    "js/ui/angular-mm-foundation/popover/popover",
+    "js/ui/angular-mm-foundation/position/position",
+    "js/ui/angular-mm-foundation/progressbar/progressbar",
+    "js/ui/angular-mm-foundation/rating/rating",
+    "js/ui/angular-mm-foundation/tabs/tabs",
+    "js/ui/angular-mm-foundation/tooltip/tooltip",
+    "js/ui/angular-mm-foundation/tour/tour",
+    "js/ui/angular-mm-foundation/transition/transition",
+    "js/ui/angular-mm-foundation/typeahead/typeahead"
+  ], 
+  function() {
+    angular.module('mm.foundation.utils',  [
+      "mm.foundation.accordion",
+      "mm.foundation.alert",
+      "mm.foundation.bindHtml",
+      "mm.foundation.buttons",
+      "mm.foundation.dropdownToggle",
+      "mm.foundation.modal",
+      "mm.foundation.pagination",
+      "mm.foundation.popover",
+      "mm.foundation.position",
+      "mm.foundation.progressbar",
+      "mm.foundation.rating",
+      "mm.foundation.tabs",
+      "mm.foundation.tooltip",
+      "mm.foundation.tour",
+      "mm.foundation.typeahead",
+    ]);
+  }
+);
+

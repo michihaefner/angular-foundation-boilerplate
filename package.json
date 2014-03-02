@@ -1,0 +1,23 @@
+{
+  "name": "angularjs-requirejs-foundation-jquery",
+  "version": "0.0.1",
+  "author": "Michael Häfner <haefnermichael@gmx.de>",
+  "keywords": [
+    "angularjs",
+    "requirejs",
+    "foundation",
+    "karma",
+    "protractor",
+    "seed",
+    "grunt"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-contrib-sass": "~0.6.0"
+  }
+}
