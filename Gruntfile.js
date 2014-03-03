@@ -8,11 +8,11 @@ module.exports = function(grunt) {
     cssmin: {
       combine: {
         files: {
-          'dev/css/main.css': ['dev/css/*.css']
+          'dev/main.css': ['dev/css/*.css']
         }
       },
       minify: {
-        src: 'dev/css/main.css',
+        src: 'dev/main.css',
         dest: 'dep/main.css'
       }
     },
